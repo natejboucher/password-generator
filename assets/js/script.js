@@ -18,31 +18,37 @@ function generatePassword()  {
   if (passwordLength < 8 || passwordLength > 128) {
      //alert user and return empty password
     alert("Invalid password length.");
-    return "";
+    return ""
   }
 
   // prompt for uppercase
   var upCaseSelected = window.confirm("Include Uppercase Letters?");
   // prompt for lowercase
-  var lowCaseSelected = window.confirm("Include Lowercase Letters>");
+  var lowCaseSelected = window.confirm("Include Lowercase Letters?");
   // prompt for number
-
+  var numbersSelected = window.confirm("Include numbers?");
   // prompt for special characters
-
+  var specCharSelected = window.confirm("Include special characters?");
   // check if lower case is selected
-    // concat the lowercase array into combined array
+    // concat the uppercase array into combined array
   if (upCaseSelected) {
     combinedArray = combinedArray.concat(upCaseChar);
   }
-  // check if upper case is selected
+  // check if lowercase is selected
     //concat the uppercase array into combined array
-
+  if (lowCaseSelected) {
+    combinedArray = combinedArray.concat(lowCaseChar);
+  }
   //check if numbers is selected
     //concat the numbers array into combined array
-
+  if (numbersSelected) {
+    combinedArray = combinedArray.concat(numChar);
+  }
   //check if special characters is selected
     //concat the special characters into combined array
-  
+  if (specCharSelected)  {
+    combinedArray = combinedArray.concat(specChar);
+  }
   // check if combined array has characters
     //if so return empty password, alert user they have to select a character type
   if (combinedArray.length === 0) {
